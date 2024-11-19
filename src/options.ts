@@ -40,7 +40,7 @@ export class Options {
     openaiConcurrencyLimit = '6',
     githubConcurrencyLimit = '6',
     apiBaseUrl = 'https://api.openai.com/v1',
-    language = 'en-US'
+    language = 'zh-TW'
   ) {
     this.debug = debug
     this.disableReview = disableReview
