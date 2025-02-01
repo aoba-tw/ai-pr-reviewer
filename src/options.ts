@@ -141,6 +141,8 @@ export class PathFilter {
 export class OpenAIOptions {
   model: string
   tokenLimits: TokenLimits
+  maxTokens?: number
+  maxCompletionTokens?: number
 
   constructor(model = 'gpt-3.5-turbo', tokenLimits: TokenLimits | null = null) {
     this.model = model
@@ -148,6 +150,14 @@ export class OpenAIOptions {
       this.tokenLimits = tokenLimits
     } else {
       this.tokenLimits = new TokenLimits(model)
+    }
+
+    if (model === 'o3-mini') {
+      this.maxTokens = undefined
+      this.maxCompletionTokens = 200000
+    }
+    else if (model === 'gpt-3.5-turbo') {
+      this.maxCompletionTokens = 16300
     }
   }
 }

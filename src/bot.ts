@@ -43,7 +43,9 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
         maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
         completionParams: {
           temperature: options.openaiModelTemperature,
-          model: openaiOptions.model
+          model: openaiOptions.model,
+          max_tokens: openaiOptions.tokenLimits.maxTokens,
+          max_completion_tokens: openaiOptions.tokenLimits.maxCompletionTokens,
         }
       })
     } else {
@@ -85,6 +87,7 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
       if (ids.parentMessageId) {
         opts.parentMessageId = ids.parentMessageId
       }
+
       try {
         response = await pRetry(() => this.api!.sendMessage(message, opts), {
           retries: this.options.openaiRetries
