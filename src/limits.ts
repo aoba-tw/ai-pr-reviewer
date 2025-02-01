@@ -34,11 +34,12 @@ export class TokenLimits {
     }
 
     // provide some margin for the request tokens
+    const requestTokenMargin = 1500
     if (this.maxCompletionTokens){
-      this.requestTokens = this.maxCompletionTokens - this.responseTokens - 100
+      this.requestTokens = this.maxCompletionTokens - this.responseTokens - requestTokenMargin
     }
     else if (this.maxTokens) {
-      this.requestTokens = this.maxTokens - this.responseTokens - 100
+      this.requestTokens = this.maxTokens - this.responseTokens - requestTokenMargin
     }
     else {
       this.requestTokens = 4000
