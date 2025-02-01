@@ -18,11 +18,13 @@ export class TokenLimits {
       this.maxTokens = 8000
       this.responseTokens = 2000
     } 
-    else {
-      // this.maxTokens = 4000
-      // this.responseTokens = 1000
+    else if (model === 'o3-mini') {
       this.maxTokens = 200000;
       this.responseTokens = 100000;
+    } 
+    else {
+      this.maxTokens = 4000
+      this.responseTokens = 1000
     }
     // provide some margin for the request tokens
     this.requestTokens = this.maxTokens - this.responseTokens - 100
