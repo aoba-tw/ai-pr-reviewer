@@ -150,22 +150,19 @@ inputs:
     default: 'https://api.openai.com/v1'
   openai_light_model:
     required: false
-    description:
-      'Model to use for simple tasks like summarizing diff on a file.'
-    default: 'gpt-3.5-turbo'
+    description: 'Model to use for simple tasks like summarizing diff on a file.'
+    default: 'o3-mini'
   openai_heavy_model:
     required: false
     description: 'Model to use for complex tasks such as code reviews.'
-#    default: 'gpt-4'
-    default: 'gpt-3.5-turbo'
+    default: 'o3-mini'
   openai_model_temperature:
     required: false
     description: 'Temperature for GPT model'
     default: '0.05'
   openai_retries:
     required: false
-    description:
-      'How many times to retry OpenAI API in case of timeouts or errors?'
+    description: 'How many times to retry OpenAI API in case of timeouts or errors?'
     default: '5'
   openai_timeout_ms:
     required: false
