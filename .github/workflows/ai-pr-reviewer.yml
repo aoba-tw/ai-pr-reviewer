@@ -20,7 +20,7 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - uses: aoba-tw/ai-pr-reviewer@v1.0.1.11
+      - uses: aoba-tw/ai-pr-reviewer@v1.0.1.12
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -28,7 +28,7 @@ jobs:
           debug: false
           review_simple_changes: false
           review_comment_lgtm: false
-          openai_light_model: 'gpt-3.5-turbo'
+          openai_light_model: 'o3-mini'
           openai_heavy_model: 'o3-mini' # o3-mini
           openai_retries: 1
           language: 'zh-TW'
