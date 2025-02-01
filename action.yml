@@ -151,11 +151,11 @@ inputs:
   openai_light_model:
     required: false
     description: 'Model to use for simple tasks like summarizing diff on a file.'
-    default: 'o3-mini'
+    default: '${{ env.OPENAI_LIGHT_MODEL }}'
   openai_heavy_model:
     required: false
     description: 'Model to use for complex tasks such as code reviews.'
-    default: 'o3-mini'
+    default: '${{ env.OPENAI_HEAVY_MODEL }}'
   openai_model_temperature:
     required: false
     description: 'Temperature for GPT model'
