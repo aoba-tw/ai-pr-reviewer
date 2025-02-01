@@ -24,8 +24,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_LIGHT_MODEL: "o3-mini"
-          OPENAI_HEAVY_MODEL: "o3-mini"
         with:
           debug: false
           review_simple_changes: false
